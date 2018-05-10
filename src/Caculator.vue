@@ -1,14 +1,6 @@
 <template>
     <div id="app">
-            <div class="container-displayContext">
-                <el-row style="text-align: right; font-size: 4em">
-                    <el-col :span="24">
-                        <div class="grid-content bg-purple-dark displayContext">
-                            {{displayContext || 0}}
-                        </div>
-                    </el-col>
-                </el-row>
-            </div>
+            <CaculatorDisplay :displayContext="displayContext"></CaculatorDisplay>
             <div class="caculator-context">
                 <el-row :gutter="15">
                   <CaculatorBtn btnValue="add" btnLabel="+" span=6 @press="handleInput($event)"></CaculatorBtn>
@@ -44,10 +36,12 @@
 
 <script>
 import CaculatorBtn from "./CaculatorBtn";
+import CaculatorDisplay from "./CaculatorDisplay";
 
 export default {
   components: {
-    CaculatorBtn
+    CaculatorBtn,
+    CaculatorDisplay
   },
   data() {
     return {
